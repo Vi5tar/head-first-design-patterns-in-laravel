@@ -1,4 +1,6 @@
 {
+    "name": "vi5tar/head-first-design-patterns-examples",
+    "description": "Code examples broken down by chapters of the book.",
     "require": {
         "psy/psysh": "@stable"
     },
