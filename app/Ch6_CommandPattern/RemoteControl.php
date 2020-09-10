@@ -9,6 +9,7 @@ class RemoteControl
 {
     public array $onCommands, $offCommands;
     public Command $noCommand;
+    public Command $undoCommand;
 
     public function __construct() {
         $this->noCommand = new NoCommand();
@@ -17,6 +18,8 @@ class RemoteControl
             $this->onCommands[$i] = $this->noCommand;
             $this->offCommands[$i] = $this->noCommand;
         }
+
+        $this->undoCommand = $this->noCommand;
     }
 
     public function setCommand(int $slot, Command $onCommand, Command $offCommand): void
@@ -28,10 +31,17 @@ class RemoteControl
     public function onButtonWasPushed(int $slot): void
     {
         $this->onCommands[$slot]->execute();
+        $this->undoCommand = $this->onCommands[$slot];
     }
 
     public function offButtonWasPushed(int $slot): void
     {
         $this->offCommands[$slot]->execute();
+        $this->undoCommand = $this->onCommands[$slot];
+    }
+
+    public function undoButtonWasPushed(): void
+    {
+        $this->undoCommand->undo();
     }
 }

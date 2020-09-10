@@ -5,7 +5,7 @@ namespace App\Ch6\Commands;
 use App\Ch6\Interfaces\Command;
 use App\Ch6\VendorClasses\GarageDoor;
 
-class GarageDoorOpenCommand implements Command
+class GarageDoorCloseCommand implements Command
 {
     public GarageDoor $garageDoor;
 
@@ -15,11 +15,11 @@ class GarageDoorOpenCommand implements Command
 
     public function execute(): void
     {
-        $this->garageDoor->up();
+        $this->garageDoor->down();
     }
 
     public function undo(): void
     {
-        $this->garageDoor->down();
+        $this->garageDoor->up();
     }
 }

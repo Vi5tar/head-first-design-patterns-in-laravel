@@ -21,11 +21,11 @@ class GarageDoor
 
     public function lightOn()
     {
-        echo "Garage door light is now on.";
+        echo "Garage door light is now on.\n";
     }
 
     public function lightOff()
     {
-        echo "Garage door light is now off.";
+        echo "Garage door light is now off.\n";
     }
 }

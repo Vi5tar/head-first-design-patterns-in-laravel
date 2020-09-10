@@ -10,4 +10,9 @@ class NoCommand implements Command
     {
         echo "This slot is empty.";
     }
+
+    public function undo(): void
+    {
+        //
+    }
 }

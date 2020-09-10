@@ -5,7 +5,7 @@ namespace App\Ch6\Commands;
 use App\Ch6\Interfaces\Command;
 use App\Ch6\VendorClasses\Light;
 
-class LightOnCommand implements Command
+class LightOffCommand implements Command
 {
     public Light $light;
 
@@ -16,5 +16,10 @@ class LightOnCommand implements Command
     public function execute(): void
     {
         $this->light->off();
+    }
+
+    public function undo(): void
+    {
+        $this->light->on();
     }
 }
