@@ -1,14 +1,17 @@
 # Setup
-
-`composer install`  
-`composer dump-autoload`
+```bash
+$ composer install
+$ composer dump-autoload
+```
 
 # Chapter 6: Command Pattern
 
 *Encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.*
 
 ### Basic Usage:
-`vendor/bin/psysh`
+```bash
+$ vendor/bin/psysh
+```
 
 Get the vendor's light class:  
 ```php
@@ -127,4 +130,32 @@ $remote->offButtonWasPushed(0);
 
 // The Dance Floor light is now off bro!
 // Stereo is now off.
+```
+
+# Chapter 7: Adapter Pattern
+
+*Converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.*
+
+# Chapter 8: Template Method Pattern
+
+*Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.*
+
+### Basic Usage:
+```bash
+$ vendor/bin/psysh
+```
+
+Get the Coffee class:  
+```php
+$coffee = new App\Ch8\BasicTemplate\Coffee();
+```
+
+Prepare the coffee:
+```php
+$coffee->prepareRecipe();
+
+// Boiling water
+// Dripping Coffee through filter
+// Pouring into cup
+// Adding Sugar and Milk
 ```
